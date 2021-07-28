@@ -16,6 +16,10 @@ Table of Contents:
 
 [Services](#services)
 
+[Events](#events)
+
+[Overall Application Layout and Tech Used](#overall)
+
 ## User Stories <a name='userstories'></a>
 
 - User can list a ticket for an event(sports, concerts, etc) for sale.
@@ -30,3 +34,9 @@ Table of Contents:
 
 ## Services <a name='services'></a>
 ![services](https://user-images.githubusercontent.com/50179896/127251381-c94880ca-cc52-487a-9b29-f5e2fc231f29.png)
+
+## Events <a name='events'></a>
+![events](https://user-images.githubusercontent.com/50179896/127252626-0d791bc5-d3eb-45f2-810e-044136379a78.png)
+
+## Overall Application Layout and Tech Used <a name='overall'></a>
+![overall](https://user-images.githubusercontent.com/50179896/127253967-dcd3bc82-1757-4908-bde1-21258257ee5e.png)
