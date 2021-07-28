@@ -1,4 +1,4 @@
-# microTickets
+# microTickets - Using Event-driven Microservice Architecture
 
 ![](https://img.shields.io/badge/API-REST-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-eventDriven-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
@@ -11,9 +11,10 @@ Another microservice-focused application that will allow users to sell and purch
 Table of Contents:
 
 [User Stories](#userstories)
+
 [Data Models](#datamodels)
 
-
+[Services](#services)
 
 ## User Stories <a name='userstories'></a>
 
@@ -24,5 +25,8 @@ Table of Contents:
 - While locked, no other user can purchase the ticket. After 15 minutes, the ticket should unlock.
 - Ticket prices can be edited if they are not locked.
 
-## Data Models
+## Data Models <a name='datamodels'></a>
 ![ticketAppDataModels](https://user-images.githubusercontent.com/50179896/127247053-8d646eab-e4fb-4169-9316-a06055878e49.png)
+
+## Services <a name='services'></a>
+![services](https://user-images.githubusercontent.com/50179896/127251381-c94880ca-cc52-487a-9b29-f5e2fc231f29.png)
