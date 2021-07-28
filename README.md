@@ -26,3 +26,4 @@ Table of Contents:
 
 ## Data Models
 ![ticketAppDataModels](https://user-images.githubusercontent.com/50179896/127247053-8d646eab-e4fb-4169-9316-a06055878e49.png)
+
