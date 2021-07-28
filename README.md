@@ -11,6 +11,7 @@ Another microservice-focused application that will allow users to sell and purch
 Table of Contents:
 
 [User Stories](#userstories)
+[Data Models](#datamodels)
 
 
 
@@ -23,3 +24,5 @@ Table of Contents:
 - While locked, no other user can purchase the ticket. After 15 minutes, the ticket should unlock.
 - Ticket prices can be edited if they are not locked.
 
+## Data Models
+![ticketAppDataModels](https://user-images.githubusercontent.com/50179896/127247053-8d646eab-e4fb-4169-9316-a06055878e49.png)
