@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/containers-docker-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/orchestration-kubernetes-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 
-Another microservice-focused application that will allow users to sell and purchase event tickets. More details will unfold as I develop the app. Keep a weather I on this README for updates...
+Another microservice-focused application that will allow users to sell and purchase event tickets. I will be using production-grade authentication and StripeJS. More details will unfold as I develop the app. Keep a weather I on this README for updates...
 
 Table of Contents:
 
