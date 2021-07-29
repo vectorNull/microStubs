@@ -1,4 +1,4 @@
-# microTickets - Using An Event-driven Microservice Architecture
+# microTickets - Using An Event-driven Microservice Architecture <a name='table_of_contents'></a>
 
 ![](https://img.shields.io/badge/API-REST-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-eventDriven-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
@@ -8,7 +8,7 @@
 
 Another microservice-focused application that will allow users to sell and purchase event tickets. I will be using production-grade authentication, custom error-handling, and StripeJS. More details will unfold as I develop the app. Keep a weather-eye on this README for updates...
 
-Table of Contents: <a name='table_of_contents'></a>
+Table of Contents: 
 
 [User Stories](#userstories)
 
