@@ -8,7 +8,7 @@
 
 Another microservice-focused application that will allow users to sell and purchase event tickets. I will be using production-grade authentication, custom error-handling, and StripeJS. More details will unfold as I develop the app. Keep a weather-eye on this README for updates...
 
-Table of Contents:
+Table of Contents: <a name='table_of_contents'></a>
 
 [User Stories](#userstories)
 
@@ -35,20 +35,23 @@ Table of Contents:
 
 ## Data Models <a name='datamodels'></a>
 ![ticketAppDataModels](https://user-images.githubusercontent.com/50179896/127247053-8d646eab-e4fb-4169-9316-a06055878e49.png)
+[Top of README](#table_of_contents)
 
 ## Services <a name='services'></a>
 ![services](https://user-images.githubusercontent.com/50179896/127251381-c94880ca-cc52-487a-9b29-f5e2fc231f29.png)
-
+[Top of README](#table_of_contents)
 ## Events <a name='events'></a>
 ![events](https://user-images.githubusercontent.com/50179896/127252626-0d791bc5-d3eb-45f2-810e-044136379a78.png)
-
+[Top of README](#table_of_contents)
 ## Overall Application Layout and Tech Used <a name='overall'></a>
 ![overall](https://user-images.githubusercontent.com/50179896/127253967-dcd3bc82-1757-4908-bde1-21258257ee5e.png)
-
+[Top of README](#table_of_contents)
 ## The Auth Service <a name='auth'></a>
 ![authService](https://user-images.githubusercontent.com/50179896/127380322-04aef378-a82c-4030-b602-4b3209c408f1.png)
-
+[Top of README](#table_of_contents)
 ## Error Handling in a Microservice App <a name='error_handling'></a>
 Microservice architecture allows for the use of different tech stacks for engineering different services. We could have one service built using NodeJS and another using Ruby On Rails. In this project, I'm using Node-Express for my project and express-validator to handle my validation. But in the future, if I wanted to add an additional service using a different stack, my error responses would be different than those sent by express-validator. 
 
 To remedy this issue and not place the burden on the front-end folks, we should attempt to use a consistent error response regardless of what tech stack is being used to build a paricular service.
+
+[Top of README](#table_of_contents)
