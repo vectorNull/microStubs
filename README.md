@@ -59,6 +59,8 @@ Because Typescript will not allow you to just add properties to the built-in Err
 - RequestValidationError
 - DatabaseConnectionError
 
+![errorHandlingMiddleware](https://user-images.githubusercontent.com/50179896/127425893-d864ebb9-765e-4887-9442-b50a72fea472.png)
+
 This allows us to add additional properties to our error message to further clarify the error response to our front-end.
 
 [Top of README](#table_of_contents)
