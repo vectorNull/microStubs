@@ -1,4 +1,4 @@
-# microTickets - Using An Event-driven Microservice Architecture <a name='table_of_contents'></a>
+# microStubs - Using An Event-driven Microservice Architecture <a name='table_of_contents'></a>
 
 ![](https://img.shields.io/badge/API-REST-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-eventDriven-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
