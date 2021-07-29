@@ -6,7 +6,7 @@
 ![](https://img.shields.io/badge/containers-docker-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/orchestration-kubernetes-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 
-Another microservice-focused application that will allow users to sell and purchase event tickets. I will be using production-grade authentication and StripeJS. More details will unfold as I develop the app. Keep a weather I on this README for updates...
+Another microservice-focused application that will allow users to sell and purchase event tickets. I will be using production-grade authentication, custom error-handling, and StripeJS. More details will unfold as I develop the app. Keep a weather-eye on this README for updates...
 
 Table of Contents:
 
@@ -21,6 +21,8 @@ Table of Contents:
 [Overall Application Layout and Tech Used](#overall)
 
 [The Auth Service](#auth)
+
+[Error Handling in a Microservice App](#error_handling)
 
 ## User Stories <a name='userstories'></a>
 
@@ -45,3 +47,8 @@ Table of Contents:
 
 ## The Auth Service <a name='auth'></a>
 ![authService](https://user-images.githubusercontent.com/50179896/127380322-04aef378-a82c-4030-b602-4b3209c408f1.png)
+
+## Error Handling in a Microservice App <a name='error_handling'></a>
+Microservice architecture allows for the use of different tech stacks for engineering different services. We could have one service built using NodeJS and another using Ruby On Rails. In this project, I'm using Node-Express for my project and express-validator to handle my validation. But in the future, if I wanted to add an additional service using a different stack, my error responses would be different than those sent by express-validator. 
+
+To remedy this issue and not place the burden on the front-end folks, we should attempt to use a consistent error response regardless of what tech stack is being used to build a paricular service.
