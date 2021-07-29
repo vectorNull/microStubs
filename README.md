@@ -1,4 +1,4 @@
-# microTickets - Using Event-driven Microservice Architecture
+# microTickets - Using An Event-driven Microservice Architecture
 
 ![](https://img.shields.io/badge/API-REST-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
 ![](https://img.shields.io/badge/architecture-eventDriven-informational?style=flat&logo=<jose>&logoColor=white&color=99ffff)
@@ -20,6 +20,8 @@ Table of Contents:
 
 [Overall Application Layout and Tech Used](#overall)
 
+[The Auth Service](#auth)
+
 ## User Stories <a name='userstories'></a>
 
 - User can list a ticket for an event(sports, concerts, etc) for sale.
@@ -40,3 +42,6 @@ Table of Contents:
 
 ## Overall Application Layout and Tech Used <a name='overall'></a>
 ![overall](https://user-images.githubusercontent.com/50179896/127253967-dcd3bc82-1757-4908-bde1-21258257ee5e.png)
+
+## The Auth Service <a name='auth'></a>
+![authService](https://user-images.githubusercontent.com/50179896/127380322-04aef378-a82c-4030-b602-4b3209c408f1.png)
