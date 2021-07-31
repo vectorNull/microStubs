@@ -74,5 +74,4 @@ Because Typescript will not allow you to just add properties to the built-in Err
 
 This allows us to add additional properties to our error message to further clarify the error response to our front-end.
 
-
 [Top of README](#table_of_contents)
