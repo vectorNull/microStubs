@@ -56,6 +56,7 @@ Table of Contents:
 ## The Auth Service <a name='auth'></a>
 
 ![authService](https://user-images.githubusercontent.com/50179896/127380322-04aef378-a82c-4030-b602-4b3209c408f1.png)
+![authServiceDetails](https://user-images.githubusercontent.com/50179896/127726997-53d1b9b3-b5aa-4045-a5c3-f31d9dee3887.png)
 [Top of README](#table_of_contents)
 
 ## Error Handling in a Microservice App <a name='error_handling'></a>
