@@ -9,9 +9,22 @@ spec:
             app: auth-mongo
     template:
         metadata:
-            label:
+            labels:
                 app: auth-mongo
         spec:
             containers:
                 - name: auth-mongo
                   image: mongo
+---
+apiVersion: v1
+kind: Service
+metadata:
+    name: auth-mongo-srv
+spec:
+    selector:
+        app: auth-mongo
+    ports:
+        - name: db
+          protocol: TCP
+          port: 27017
+          targetPort: 27017
