@@ -22,6 +22,8 @@ Table of Contents:
 
 [The Auth Service](#auth)
 
+[Why JWT For Authentication / Authorization?](#JWT)
+
 [Error Handling in a Microservice App](#error_handling)
 
 ## User Stories <a name='userstories'></a>
@@ -64,6 +66,13 @@ There is a major security issue that needs to be addressed. How do we address th
 By nature, microservices are decoupled services. That is, they do not directly communicate with one another. And to maintain this type of architecture and make sure is does not morph into something different, services must be autonomous. That presents a fundamental problem when it comes to security and authentication.
 
 Imagine that a admin wishes to ban a particular user who has a valid JWT token, coookie, or is otherwise currently authenticated by the auth service. If that user is already authenticated, how do we communicate to the other services (which are decoupled from that auth service) that the user is banned? There is really no perfect solution to this issue that I'm aware of. This is something that needs to be considered when designing microservices. Developers coould implement an expiration date or time on cookies/JWT tokes and send an event (BannedUserEvent, for example) via the Event Bus to the other services that would block banned users from interacting with those services. However, I won't be doing that here. Main reason: I don't know how :) That's something I will research for future projects.
+
+## Why JWT For Authentication / Authorization? <a name='JWT'></a>
+
+Several requirements are needed to secure the auth service from malicious users. First, whatever auth method we use must be able to communicate information about the user and handle authorization as well. One way or another, we need to be able to distinguish between a regular user with limited permissions and an administrator. We must also have a built-in, tamper resistant way to expire or invalidate whatever we use for authentication. And, in keeping with the standard microservice architecture, the auth method must be easily understood by different tech stacks since other services may be built using different languages and/or frameworks. 
+
+All of this points to the use of JSON Web Tokens.
+
 
 [Top of README](#table_of_contents)
 
