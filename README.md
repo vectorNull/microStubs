@@ -24,9 +24,9 @@ Table of Contents:
 
 [Why JWT For Authentication / Authorization?](#JWT)
 
-[Error Handling in a Microservice App](#error_handling)
-
 [NextJS, Server-Side Rendering, and JSON Web Tokens](#nextJS)
+
+[Error Handling in a Microservice App](#error_handling)
 
 ## User Stories <a name='userstories'></a>
 
@@ -73,8 +73,15 @@ Imagine that a admin wishes to ban a particular user who has a valid JWT token, 
 
 Several requirements are needed to secure the auth service from malicious users. First, whatever auth method we use must be able to communicate information about the user and handle authorization as well. One way or another, we need to be able to distinguish between a regular user with limited permissions and an administrator. We must also have a built-in, tamper resistant way to expire or invalidate whatever we use for authentication. And, in keeping with the standard microservice architecture, the auth method must be easily understood by different tech stacks since other services may be built using different languages and/or frameworks. 
 
-All of this points to the use of JSON Web Tokens.
+All of this points to the use of [JSON Web Tokens](https://jwt.io/).
 
+[Top of README](#table_of_contents)
+
+## NextJS, Server-Side Rendering, and JWT <a name='nextJS'></a>
+
+In a "normal" React application, when a user initiates a request for a particular server resource, React sends HTML that usually includes script tags. Then a request is made for that JavaScript so that it may be loaded into the browser. It is in those scripts that our authentication mechanism is implmented. So, only then can we then receive our JWT for authentication / authorization.
+
+We have a different issue with NextJS. By using the [NextJS](https://nextjs.org/) framework, all the rendering is done on the server and the browser only receives a fully-rendered page. The browser will not have the JavaScript before hand to implement the authentication method in the browser. This means that we cannot append a custom header to the response beforehand, nor can we add a custom token to the body of the response because that would require code that the browser will not have. The only option we have (or that I'm aware of at the moment) is to use the Cookie tranport mechanism to communicate the JWT during the initial page load. So, I'll be using a Cookie to communicate a JWT and impliment that with the [cookie-session npm package](https://www.npmjs.com/package/cookie-session).
 
 [Top of README](#table_of_contents)
 
@@ -95,10 +102,3 @@ This allows us to add additional properties to our error message to further clar
 
 [Top of README](#table_of_contents)
 
-## NextJS, Server-Side Rendering, and JWT <a name='nextJS'></a>
-
-In a "normal" React application, when a user initiates a request for a particular server resource, React sends HTML that usually includes script tags. Then a request is made for that JavaScript so that it may be loaded into the browser. It is in those scripts that our authentication mechanism is implmented. So, only then can we then receive our JWT for authentication / authorization.
-
-We have a different issue with NextJS. By using the [NextJS](https://nextjs.org/) framework, all the rendering is done on the server and the browser only receives a fully-rendered page. The browser will not have the JavaScript before hand to implement the authentication method in the browser. This means that we cannot append a custom header to the response beforehand, nor can we add a custom token to the body of the response because that would require code that the browser will not have. The only option we have (or that I'm aware of at the moment) is to use the Cookie tranport mechanism to communicate the JWT during the initial page load. So, I'll be using a Cookie to communicate a JWT and impliment that with the [cookie-session npm package](https://www.npmjs.com/package/cookie-session).
-
-[Top of README](#table_of_contents)
