@@ -1,6 +1,7 @@
 import express from "express";
 import "express-async-errors";
 import mongoose from "mongoose";
+import cookieSession from "cookie-session";
 
 import { currentUserRouter } from "./routes/current-user";
 import { signupUserRouter } from "./routes/signup";
@@ -10,7 +11,14 @@ import { errorHandler } from "./middlewares/error-handler";
 import { NotFoundError } from "./errors/not-found-error";
 
 const app = express();
+app.set('trust proxy', true) // traffic is being proxied through ingress-nginx
 app.use(express.json());
+app.use(
+	cookieSession({
+		signed: false,	// maintaining cross-compatibility with other languages and frameworks
+		secure: true,	// https
+	})
+)
 
 // Desc: Get the current user
 // method: GET
