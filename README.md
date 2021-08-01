@@ -57,6 +57,14 @@ Table of Contents:
 
 ![authService](https://user-images.githubusercontent.com/50179896/127380322-04aef378-a82c-4030-b602-4b3209c408f1.png)
 ![authServiceDetails](https://user-images.githubusercontent.com/50179896/127726997-53d1b9b3-b5aa-4045-a5c3-f31d9dee3887.png)
+
+### Security Issue
+There is a major security issue that needs to be addressed. How do we address the issue of banned users in this application? (That, of course, is just one of many security issues)
+
+By nature, microservices are decoupled services. That is, they do not directly communicate with one another. And to maintain this type of architecture and make sure is does not morph into something different, services must be autonomous. That presents a fundamental problem when it comes to security and authentication.
+
+Imagine that a admin wishes to ban a particular user who has a valid JWT token, coookie, or is otherwise currently authenticated by the auth service. If that user is already authenticated, how do we communicate to the other services (which are decoupled from that auth service) that the user is banned? There is really no perfect solution to this issue that I'm aware of. This is something that needs to be considered when designing microservices. Developers coould implement an expiration date or time on cookies/JWT tokes and send an event (BannedUserEvent, for example) via the Event Bus to the other services that would block banned users from interacting with those services. However, I won't be doing that here. Main reason: I don't know how :) That's something I will research for future projects.
+
 [Top of README](#table_of_contents)
 
 ## Error Handling in a Microservice App <a name='error_handling'></a>
