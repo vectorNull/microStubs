@@ -21,7 +21,7 @@ spec:
                         valueFrom:
                             secretKeyRef:
                                 name: jwt-secret
-                                key: JTW_KEY
+                                key: JWT_KEY
 
 ---
 # service - to give us access to the pod
