@@ -11,14 +11,14 @@ import { errorHandler } from "./middlewares/error-handler";
 import { NotFoundError } from "./errors/not-found-error";
 
 const app = express();
-app.set('trust proxy', true) // traffic is being proxied through ingress-nginx
+app.set("trust proxy", true); // traffic is being proxied through ingress-nginx
 app.use(express.json());
 app.use(
 	cookieSession({
-		signed: false,	// maintaining cross-compatibility with other languages and frameworks
-		secure: true,	// https
+		signed: false, // maintaining cross-compatibility with other languages and frameworks
+		secure: true, // https
 	})
-)
+);
 
 // Desc: Get the current user
 // method: GET
@@ -50,13 +50,17 @@ app.all("*", async (req, res) => {
 app.use(errorHandler);
 
 const start = async () => {
+	if (!process.env.JWT_KEY) {
+		throw new Error("JWT_KEY must be defined.");
+	}
+
 	try {
 		await mongoose.connect("mongodb://auth-mongo-srv:27017/auth", {
 			useNewUrlParser: true,
 			useUnifiedTopology: true,
 			useCreateIndex: true,
 		});
-        console.log('Connected to MongoDB...');
+		console.log("Connected to MongoDB...");
 	} catch (err) {
 		console.error(err);
 	}
