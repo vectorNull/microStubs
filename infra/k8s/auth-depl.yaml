@@ -5,14 +5,14 @@ metadata:
     name: auth-depl
 spec:
     replicas: 1
-    selector: # How to find the pods
+    selector:
         matchLabels:
             app: auth
-    template: # How to create the pods
+    template:
         metadata:
             labels:
                 app: auth
-        spec: # Tells the pod how its going to behave
+        spec:
             containers:
                 - name: auth
                   image: vectornull/auth
@@ -22,14 +22,12 @@ spec:
                             secretKeyRef:
                                 name: jwt-secret
                                 key: JWT_KEY
-
 ---
-# service - to give us access to the pod
 apiVersion: v1
 kind: Service
 metadata:
     name: auth-srv
-spec: # ClusterIP default
+spec:
     selector:
         app: auth
     ports:
