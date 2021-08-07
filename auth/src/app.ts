@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(
 	cookieSession({
 		signed: false, // maintaining cross-compatibility with other languages and frameworks
-		secure: true, // https
+		secure: process.env.NODE_ENV !== "test", // for testing; see comment in signup.test.ts
 	})
 );
 
