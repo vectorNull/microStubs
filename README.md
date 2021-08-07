@@ -10,6 +10,8 @@ Another microservice-focused application that will allow users to sell and purch
 
 Table of Contents:
 
+[Tech Stack](#techStack)
+
 [User Stories](#userstories)
 
 [Data Models](#datamodels)
@@ -27,6 +29,16 @@ Table of Contents:
 [NextJS, Server-Side Rendering, and JSON Web Tokens](#nextJS)
 
 [Error Handling in a Microservice App](#error_handling)
+
+## Tech Stack <a name='techStack'></a>
+- TypeScript
+- NodeJS (14.17.1)
+- Express (4.17.1)
+- MongoDB & MongoDB-Memory-Server (for testing)
+- Docker
+- Minikube (to run a local Kubernetes cluster)
+- Scaffold (to handle building containers and local deployment)
+- Jest (for testing)
 
 ## User Stories <a name='userstories'></a>
 
