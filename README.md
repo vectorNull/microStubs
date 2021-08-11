@@ -30,7 +30,7 @@ Table of Contents:
 
 [Error Handling in a Microservice App](#error_handling)
 
-[NextJS](#nextJS)
+[NextJS](#nextJS2)
 
 ## Tech Stack <a name='techStack'></a>
 - TypeScript
@@ -116,6 +116,6 @@ This allows us to add additional properties to our error message to further clar
 
 [Top of README](#table_of_contents)
 
-# NextJS <a name='nextJS'></a>
+# NextJS <a name='nextJS2'></a>
 
 <img width="1405" alt="NextJSDiagram" src="https://user-images.githubusercontent.com/50179896/128953749-e109486e-f0c7-4ddc-b840-1312f37fa2ab.png">
