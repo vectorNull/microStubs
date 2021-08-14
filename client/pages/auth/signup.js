@@ -1,39 +1,45 @@
 import { useState } from 'react';
-import axios from 'axios';
+import UseRequest from '../../hooks/use-request';
 
 const Signup = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-
-    const onSubmit = async (event) => {
-        event.preventDefault();
-        const response = await axios.post('/api/users/signup', {
+    
+    const { doRequest, errors } = UseRequest({
+        url: '/api/users/signup',
+        method: 'post',
+        body: {
             email, password
-        })
-        console.log(response.data);
-    }
+        }
+    })
+	const onSubmit = async (event) => {
+		event.preventDefault();
+
+		doRequest();
+	};
 
 	return (
 		<form onSubmit={onSubmit}>
 			<h1>Sign Up</h1>
-			<div className="form-group">
+			<div className='form-group'>
 				<label>Email Address</label>
 				<input
 					value={email}
 					onChange={(e) => setEmail(e.target.value)}
-					className="form-control"
+					className='form-control'
 				/>
 			</div>
-			<div className="form-group">
+			<div className='form-group'>
 				<label>Password</label>
 				<input
 					value={password}
 					onChange={(e) => setPassword(e.target.value)}
-					type="password"
-					className="form-control"
+					type='password'
+					className='form-control'
 				/>
 			</div>
-			<button className="btn btn-primary">Sign Up</button>
+            {errors}
+			<button className='btn btn-primary'>Sign Up</button>
 		</form>
 	);
 };
