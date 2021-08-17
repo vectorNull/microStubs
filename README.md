@@ -10,6 +10,8 @@ Another microservice-focused application that will allow users to sell and purch
 
 Table of Contents:
 
+## General Information
+
 [Tech Stack](#techStack)
 
 [User Stories](#userstories)
@@ -21,6 +23,10 @@ Table of Contents:
 [Events](#events)
 
 [Overall Application Layout and Tech Used](#overall)
+
+### [Initial Configuration for Each Service](#steps)
+
+## Service Details
 
 ### [The Auth Service](#auth)
 
@@ -72,6 +78,15 @@ Table of Contents:
 
 ![overall](https://user-images.githubusercontent.com/50179896/127253967-dcd3bc82-1757-4908-bde1-21258257ee5e.png)
 [Top of README](#table_of_contents)
+
+## Initial Configuration for Each Service <a name='steps'></a>
+- Create package.json and install initial dependencies
+- Write Dockerfile
+- Create index.js to run project
+- Build image and push to docker hub
+- Write K8s file for deployment and service
+- Update Skaffold.yaml file to do file sync for service
+- Write k8s file for MongoDB deployment and service
 
 ## The Auth Service <a name='auth'></a>
 
