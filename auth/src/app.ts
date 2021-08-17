@@ -1,21 +1,21 @@
-import express from "express";
-import "express-async-errors";
-import cookieSession from "cookie-session";
+import express from 'express';
+import 'express-async-errors';
+import cookieSession from 'cookie-session';
 
-import { currentUserRouter } from "./routes/current-user";
-import { signupUserRouter } from "./routes/signup";
-import { signinUserRouter } from "./routes/signin";
-import { signoutUserRouter } from "./routes/signout";
-import { errorHandler } from "./middlewares/error-handler";
-import { NotFoundError } from "./errors/not-found-error";
+import { currentUserRouter } from './routes/current-user';
+import { signupUserRouter } from './routes/signup';
+import { signinUserRouter } from './routes/signin';
+import { signoutUserRouter } from './routes/signout';
+import { errorHandler } from '@prominentcode/common/build';
+import { NotFoundError } from '@prominentcode/common/build';
 
 const app = express();
-app.set("trust proxy", true); // traffic is being proxied through ingress-nginx
+app.set('trust proxy', true); // traffic is being proxied through ingress-nginx
 app.use(express.json());
 app.use(
 	cookieSession({
 		signed: false, // maintaining cross-compatibility with other languages and frameworks
-		secure: process.env.NODE_ENV !== "test", // for testing; see comment in signup.test.ts
+		secure: process.env.NODE_ENV !== 'test', // for testing; see comment in signup.test.ts
 	})
 );
 
@@ -43,7 +43,7 @@ app.use(signinUserRouter);
 // route: /api/users/signout
 app.use(signoutUserRouter);
 
-app.all("*", async (req, res) => {
+app.all('*', async (req, res) => {
 	throw new NotFoundError();
 });
 app.use(errorHandler);
