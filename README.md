@@ -10,6 +10,8 @@ Another microservice-focused application that will allow users to sell and purch
 
 Table of Contents:
 
+## General Information
+
 [Tech Stack](#techStack)
 
 [User Stories](#userstories)
@@ -22,7 +24,11 @@ Table of Contents:
 
 [Overall Application Layout and Tech Used](#overall)
 
-[The Auth Service](#auth)
+### [Initial Configuration for Each Service](#steps)
+
+## Service Details
+
+### [The Auth Service](#auth)
 
 [Why JWT For Authentication / Authorization?](#JWT)
 
@@ -31,6 +37,8 @@ Table of Contents:
 [Error Handling in a Microservice App](#error_handling)
 
 [NextJS](#nextJS2)
+
+### [The Ticketing Service](#ticketing)
 
 ## Tech Stack <a name='techStack'></a>
 - TypeScript
@@ -70,6 +78,15 @@ Table of Contents:
 
 ![overall](https://user-images.githubusercontent.com/50179896/127253967-dcd3bc82-1757-4908-bde1-21258257ee5e.png)
 [Top of README](#table_of_contents)
+
+## Initial Configuration for Each Service <a name='steps'></a>
+- Create package.json and install initial dependencies
+- Write Dockerfile
+- Create index.js to run project
+- Build image and push to docker hub
+- Write K8s file for deployment and service
+- Update Skaffold.yaml file to do file sync for service
+- Write k8s file for MongoDB deployment and service
 
 ## The Auth Service <a name='auth'></a>
 
@@ -119,3 +136,7 @@ This allows us to add additional properties to our error message to further clar
 # NextJS <a name='nextJS2'></a>
 
 <img width="1405" alt="NextJSDiagram" src="https://user-images.githubusercontent.com/50179896/128953749-e109486e-f0c7-4ddc-b840-1312f37fa2ab.png">
+
+# Ticketing Service <a name='ticketing'></a>
+
+![ticketingRoutes](https://user-images.githubusercontent.com/50179896/129786037-9086054b-dc26-4d72-86dc-98d1ec5f0c1b.png)
