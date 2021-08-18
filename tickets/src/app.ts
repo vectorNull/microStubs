@@ -1,9 +1,13 @@
 import express from 'express';
 import 'express-async-errors';
 import cookieSession from 'cookie-session';
+import { createTicketRouter } from './routes/new';
 
-import { errorHandler } from '@prominentcode/common/build';
-import { NotFoundError } from '@prominentcode/common/build';
+import {
+	errorHandler,
+	NotFoundError,
+	currentUser,
+} from '@prominentcode/common/build';
 
 const app = express();
 app.set('trust proxy', true); // traffic is being proxied through ingress-nginx
@@ -15,7 +19,9 @@ app.use(
 	})
 );
 
+app.use(currentUser);
 
+app.use(createTicketRouter);
 
 app.all('*', async (req, res) => {
 	throw new NotFoundError();
