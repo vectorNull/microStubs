@@ -44,6 +44,7 @@ Table of Contents:
 - TypeScript
 - NodeJS (14.17.1)
 - Express (4.17.1)
+- NATS Streaming Server
 - MongoDB & MongoDB-Memory-Server (for testing)
 - Docker
 - Minikube (to run a local Kubernetes cluster)
