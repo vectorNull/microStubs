@@ -1,8 +1,9 @@
-import { connect } from 'node-nats-streaming';
+import { connect, Message } from 'node-nats-streaming';
+import { randomBytes } from 'crypto';
 
 console.clear();
 
-const stan = connect('tickets', '123', {
+const stan = connect('tickets', randomBytes(4).toString('hex'), {
 	url: 'http://localhost:4222',
 });
 
@@ -11,8 +12,12 @@ stan.on('connect', () => {
 
 	const subscription = stan.subscribe('ticket:created');
 
-	subscription.on('message', (msg) => {
-		console.log('Message received...');
-		console.log(msg);
+	subscription.on('message', (msg: Message) => {
+		const data = msg.getData();
+		if (typeof data === 'string') {
+			console.log(
+				`Received event #${msg.getSequence()}, with data: ${data}`
+			);
+		}
 	});
 });
